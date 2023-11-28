@@ -2,14 +2,33 @@ version: '3'
 
 services:
 
+  db:
+    image: mysql:5.7
+    command: innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=nodedb
+    ports:
+      - 3306:3306
+    networks:
+      - nodenet
+
   node:
     build: 
-      context: ./app
+      context: ./node
       dockerfile: Dockerfile
     # image: venilson/nodejs
     container_name: node
     networks:
       - nodenet
+    tty: true
+    volumes:
+      - ./node:/usr/src/app
   
   nginx:
     build:
