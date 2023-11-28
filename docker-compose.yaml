@@ -3,13 +3,19 @@ version: '3'
 services:
 
   node:
-    image: venilson/nodejs
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    # image: venilson/nodejs
     container_name: node
     networks:
       - nodenet
   
   nginx:
-    image: venilson/nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    # image: venilson/nginx
     container_name: nginx
     ports:
       - 8080:80
