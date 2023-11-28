@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  node:
+    image: venilson/nodejs
+    container_name: node
+    networks:
+      - nodenet
+  
+  nginx:
+    image: venilson/nginx
+    container_name: nginx
+    ports:
+      - 8080:80
+    networks:
+      - nodenet
+  
+networks:
+  nodenet:
+    driver: bridge
