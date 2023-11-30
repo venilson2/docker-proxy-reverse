@@ -17,6 +17,7 @@ Certifique-se de ter o Docker e o Docker Compose instalados.
 ### 2. MySql:
 
 - Volte ao diretório principal.
+- Crie uma pasta com nome `db`
 - Execute `docker exec -t db bash` para entrar no container do mysql.
 - Execute `mysql -uroot -p`
 - Insira a senha quando solicitado (senha: 'root').
