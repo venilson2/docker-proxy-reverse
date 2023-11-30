@@ -35,7 +35,6 @@ Certifique-se de ter o Docker e o Docker Compose instalados.
 
 ### 3. Docker Compose:
 
-- Volte ao diretório principal.
 - Execute `docker-compose up -d --build` para iniciar os serviços.
 - Acesse o aplicativo em [http://localhost:8080](http://localhost:8080).
 
