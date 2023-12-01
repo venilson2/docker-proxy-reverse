@@ -10,6 +10,7 @@ services:
     tty: true
     volumes:
       - ./db:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=nodedb
@@ -29,6 +30,7 @@ services:
     tty: true
     volumes:
       - ./node:/usr/src/app
+    command: sh -c "npm install && npm start"
   
   nginx:
     build:
