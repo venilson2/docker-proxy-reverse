@@ -18,7 +18,7 @@ const executeQuery = (query, params) => {
       if (err) {
         reject(err);
       } else {
-        resolve({'docker': '<h1>Full Cycle Rocks!</h1>', 'results': results});
+        resolve({results});
       }
       connection.end();
     })
@@ -28,7 +28,7 @@ const executeQuery = (query, params) => {
 app.get('/', async (req, res) => {
   try {
     const person = {
-      name: 'Venilson'
+      name: '<h1>Full Cycle Rocks!</h1>'
     };
 
     const insertQuery = 'INSERT INTO tb_peoples (name) VALUES (?)';
